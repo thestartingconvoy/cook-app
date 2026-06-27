@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Menu } from "@/lib/types";
 import { downloadMenuAssets } from "@/lib/offline";
-import { CheckIcon, DownloadIcon } from "./icons";
+import { ArrowLeftIcon, CheckIcon, DownloadIcon } from "./icons";
 
 /**
  * Shown right after a menu is picked: confirms the choice and downloads all
@@ -12,9 +12,11 @@ import { CheckIcon, DownloadIcon } from "./icons";
 export default function DownloadGate({
   menu,
   onDone,
+  onBack,
 }: {
   menu: Menu;
   onDone: () => void;
+  onBack: () => void;
 }) {
   const [status, setStatus] = useState<"idle" | "working" | "done">("idle");
 
@@ -29,7 +31,16 @@ export default function DownloadGate({
   }
 
   return (
-    <div className="flex min-h-dvh flex-col items-center justify-center px-6 text-center">
+    <div className="relative flex min-h-dvh flex-col items-center justify-center px-6 text-center">
+      <button
+        onClick={onBack}
+        disabled={status === "working"}
+        aria-label="Back to menus"
+        className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink shadow-sm ring-1 ring-black/5 active:scale-95 disabled:opacity-50"
+      >
+        <ArrowLeftIcon className="h-6 w-6" />
+      </button>
+
       <div className="flex h-24 w-24 items-center justify-center rounded-full bg-leaf/15 text-leaf">
         <CheckIcon className="h-12 w-12" />
       </div>
