@@ -77,7 +77,7 @@ export default function DayView({
           {todayActive ? (
             <StopIcon className="h-14 w-14" />
           ) : (
-            <PlayIcon className="ml-2 h-16 w-16" />
+            <PlayIcon className="h-16 w-16" />
           )}
         </button>
 
