@@ -57,6 +57,12 @@ export default function Home() {
     setView({ kind: "downloading", menu });
   }
 
+  async function handleBackToMenus() {
+    clearSelection();
+    const menus = await fetchAllMenus().catch(() => []);
+    setView({ kind: "picking", menus });
+  }
+
   function handleDownloadDone(menu: Menu) {
     const selection = getSelection();
     setView({
@@ -94,7 +100,11 @@ export default function Home() {
 
   if (view.kind === "downloading") {
     return (
-      <DownloadGate menu={view.menu} onDone={() => handleDownloadDone(view.menu)} />
+      <DownloadGate
+        menu={view.menu}
+        onBack={handleBackToMenus}
+        onDone={() => handleDownloadDone(view.menu)}
+      />
     );
   }
 
