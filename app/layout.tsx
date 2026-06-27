@@ -19,13 +19,13 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kitchen",
+  title: "Menu",
   manifest: "/manifest.json",
   icons: {
     icon: "/icons/food.svg",
     apple: "/icons/food.svg",
   },
-  appleWebApp: { capable: true, statusBarStyle: "default", title: "Kitchen" },
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "Menu" },
 };
 
 export const viewport: Viewport = {

@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kitchen app icon">
-  <rect width="512" height="512" rx="112" fill="#fbf7f0"/>
-  <circle cx="256" cy="270" r="150" fill="#ffffff"/>
-  <circle cx="256" cy="270" r="118" fill="#f7c56b"/>
-  <path d="M174 242c34-42 130-42 164 0 19 23 25 61 11 92-15 34-49 54-93 54s-78-20-93-54c-14-31-8-69 11-92Z" fill="#2f5d50"/>
-  <path d="M182 225c17-42 52-67 74-67s57 25 74 67" fill="none" stroke="#2f5d50" stroke-width="30" stroke-linecap="round"/>
-  <path d="M151 142v142" stroke="#9b4d2e" stroke-width="24" stroke-linecap="round"/>
-  <path d="M128 142v66M151 142v66M174 142v66" stroke="#9b4d2e" stroke-width="16" stroke-linecap="round"/>
-  <path d="M365 142c38 42 38 92 0 122v105" stroke="#9b4d2e" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="214" cy="292" r="12" fill="#fbf7f0"/>
-  <circle cx="256" cy="314" r="12" fill="#fbf7f0"/>
-  <circle cx="298" cy="292" r="12" fill="#fbf7f0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Menu app icon">
+  <rect width="512" height="512" rx="112" fill="#FAF6EF"/>
+  <!-- plate -->
+  <circle cx="256" cy="256" r="118" fill="none" stroke="#28231D" stroke-width="20"/>
+  <circle cx="256" cy="256" r="78" fill="none" stroke="#28231D" stroke-width="12" opacity="0.35"/>
+  <!-- fork -->
+  <g stroke="#C75D44" stroke-width="20" stroke-linecap="round">
+    <path d="M150 96v92a30 30 0 0 0 30 30 30 30 0 0 0 30-30V96"/>
+    <path d="M180 150v266"/>
+  </g>
+  <!-- knife -->
+  <path d="M362 96c34 22 34 120 0 150v170" fill="none" stroke="#C75D44" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

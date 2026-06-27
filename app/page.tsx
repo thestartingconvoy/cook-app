@@ -95,7 +95,16 @@ export default function Home() {
   }
 
   if (view.kind === "picking") {
-    return <MenuPicker menus={view.menus} onPick={handlePick} />;
+    return (
+      <MenuPicker
+        menus={view.menus}
+        onPick={handlePick}
+        onRefresh={async () => {
+          const menus = await fetchAllMenus().catch(() => []);
+          setView({ kind: "picking", menus });
+        }}
+      />
+    );
   }
 
   if (view.kind === "downloading") {

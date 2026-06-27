@@ -16,6 +16,8 @@ const config: Config = {
         ink: "#28231D",
         accent: "#C75D44",
         accentDark: "#A8472F",
+        rausch: "#FF385C",
+        rauschDark: "#E00B41",
         gold: "#C2A04C",
         leaf: "#6E8C6A",
       },
@@ -30,6 +32,7 @@ const config: Config = {
         soft: "0 2px 10px rgba(40,35,29,0.05)",
         card: "0 1px 2px rgba(40,35,29,0.04), 0 14px 30px -16px rgba(40,35,29,0.22)",
         float: "0 18px 50px -16px rgba(199,93,68,0.55)",
+        floatPink: "0 18px 50px -16px rgba(255,56,92,0.6)",
         ring: "inset 0 0 0 1px rgba(40,35,29,0.06)",
       },
       borderRadius: {
@@ -55,8 +58,8 @@ const config: Config = {
           "50%": { transform: "scale(1.035)" },
         },
         halo: {
-          "0%": { boxShadow: "0 0 0 0 rgba(199,93,68,0.40)" },
-          "70%,100%": { boxShadow: "0 0 0 26px rgba(199,93,68,0)" },
+          "0%": { boxShadow: "0 0 0 0 rgba(255,56,92,0.38)" },
+          "70%,100%": { boxShadow: "0 0 0 26px rgba(255,56,92,0)" },
         },
       },
     },

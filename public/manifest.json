@@ -1,6 +1,6 @@
 {
-  "name": "Kitchen",
-  "short_name": "Kitchen",
+  "name": "Menu",
+  "short_name": "Menu",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
