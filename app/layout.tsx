@@ -1,10 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import InstallPrompt from "@/components/InstallPrompt";
 import RegisterSW from "@/components/RegisterSW";
 
 export const metadata: Metadata = {
   title: "Kitchen",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/food.svg",
+    apple: "/icons/food.svg",
+  },
   appleWebApp: { capable: true, statusBarStyle: "default", title: "Kitchen" },
 };
 
@@ -25,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <RegisterSW />
+        <InstallPrompt />
         {children}
       </body>
     </html>
