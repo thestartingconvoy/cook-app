@@ -25,3 +25,7 @@ export async function kvGet<T>(key: string): Promise<T | undefined> {
 export async function kvSet<T>(key: string, value: T): Promise<void> {
   await (await db()).put(STORE, value, key);
 }
+
+export async function kvClear(): Promise<void> {
+  await (await db()).clear(STORE);
+}

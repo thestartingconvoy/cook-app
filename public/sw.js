@@ -30,6 +30,14 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
 
+  // Menu data API: always network-first so a refresh gets the latest from the
+  // DB. Never cache it here (the app persists its own copy in IndexedDB for
+  // offline). Falling through to cache-first would serve stale menus forever.
+  if (request.url.includes("/api/menus")) {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
+    return;
+  }
+
   // Navigations: try network, fall back to the cached shell ("/").
   if (request.mode === "navigate") {
     event.respondWith(

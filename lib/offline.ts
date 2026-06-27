@@ -28,6 +28,13 @@ export async function downloadMenuAssets(menu: Menu): Promise<number> {
   return urls.length;
 }
 
+/** Wipe every cached asset (used by a hard refresh). */
+export async function clearAssetCache(): Promise<void> {
+  if (typeof caches === "undefined") return;
+  const keys = await caches.keys();
+  await Promise.all(keys.map((k) => caches.delete(k)));
+}
+
 /** True if every asset for the menu is present in the cache. */
 export async function isMenuDownloaded(menu: Menu): Promise<boolean> {
   if (typeof caches === "undefined") return false;

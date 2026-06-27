@@ -15,6 +15,7 @@ import {
   clearSelection,
 } from "@/lib/storage";
 import { downloadMenuAssets } from "@/lib/offline";
+import { clearAllLocalData } from "@/lib/reset";
 import MenuPicker from "@/components/MenuPicker";
 import DownloadGate from "@/components/DownloadGate";
 import DayView from "@/components/DayView";
@@ -100,6 +101,8 @@ export default function Home() {
         menus={view.menus}
         onPick={handlePick}
         onRefresh={async () => {
+          // Hard refresh: wipe all local data, then re-pull from the DB.
+          await clearAllLocalData();
           const menus = await fetchAllMenus().catch(() => []);
           setView({ kind: "picking", menus });
         }}
