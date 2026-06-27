@@ -14,6 +14,15 @@ export function StopIcon({ className = "" }: { className?: string }) {
   );
 }
 
+export function ArrowLeftIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+      <path d="M15 18l-6-6 6-6" />
+      <path d="M10 12h10" />
+    </svg>
+  );
+}
+
 export function GearIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
