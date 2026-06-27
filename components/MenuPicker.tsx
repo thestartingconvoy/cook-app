@@ -14,25 +14,29 @@ export default function MenuPicker({
   onPick: (menu: Menu) => void;
 }) {
   return (
-    <div className="min-h-dvh px-5 py-8">
-      <div className="mx-auto grid max-w-md grid-cols-1 gap-5">
+    <div className="min-h-dvh px-6 py-12">
+      <div className="stagger mx-auto grid max-w-md grid-cols-1 gap-5">
         {menus.map((menu) => (
           <button
             key={menu.id}
             onClick={() => onPick(menu)}
-            className="flex items-center gap-4 rounded-3xl bg-white p-5 text-left shadow-sm ring-1 ring-black/5 transition active:scale-[0.98]"
+            className="surface flex items-center gap-5 rounded-4xl p-5 text-left transition-transform duration-300 active:scale-[0.97]"
           >
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-warm">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-warm to-sand shadow-ring">
               {menu.cover ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={menu.cover} alt="" className="h-full w-full object-cover" />
               ) : (
-                <span className="text-3xl">🍲</span>
+                <span className="text-3xl opacity-80">🍲</span>
               )}
             </div>
             <div className="min-w-0">
-              <div className="truncate text-2xl font-semibold">{menu.name}</div>
-              <div className="text-sm text-ink/50">{menu.days.length} days</div>
+              <div className="truncate font-display text-2xl font-medium tracking-tightest text-ink">
+                {menu.name}
+              </div>
+              <div className="mt-0.5 text-sm font-medium uppercase tracking-[0.18em] text-gold">
+                {menu.days.length} days
+              </div>
             </div>
           </button>
         ))}

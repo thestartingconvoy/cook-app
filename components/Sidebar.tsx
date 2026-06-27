@@ -34,7 +34,7 @@ export default function Sidebar({
       <button
         aria-label="Settings"
         onClick={() => setOpen(true)}
-        className="fixed left-3 top-3 z-20 p-2 text-ink/15 active:text-ink/30"
+        className="fixed left-3 top-3 z-20 p-2 text-ink/[0.12] transition-colors active:text-ink/30"
       >
         <GearIcon className="h-5 w-5" />
       </button>
@@ -42,15 +42,17 @@ export default function Sidebar({
       {open && (
         <div className="fixed inset-0 z-30">
           <div
-            className="absolute inset-0 bg-black/30"
+            className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute left-0 top-0 flex h-full w-72 flex-col gap-3 bg-cream p-5 shadow-xl">
-            <div className="mb-2 text-lg font-semibold text-ink/60">Settings</div>
+          <div className="absolute left-0 top-0 flex h-full w-72 flex-col gap-3 bg-cream p-6 shadow-2xl">
+            <div className="mb-3 font-display text-xl font-medium tracking-tightest text-ink/70">
+              Settings
+            </div>
 
             <button
               onClick={onChangeMenu}
-              className="flex items-center gap-3 rounded-2xl bg-white p-4 text-left text-lg ring-1 ring-black/5 active:scale-[0.98]"
+              className="surface flex items-center gap-3 rounded-2xl p-4 text-left text-lg active:scale-[0.98]"
             >
               <span className="text-2xl">🍲</span>
               Change menu
@@ -59,7 +61,7 @@ export default function Sidebar({
             <button
               onClick={handleRefresh}
               disabled={refreshing}
-              className="flex items-center gap-3 rounded-2xl bg-white p-4 text-left text-lg ring-1 ring-black/5 active:scale-[0.98] disabled:opacity-60"
+              className="surface flex items-center gap-3 rounded-2xl p-4 text-left text-lg active:scale-[0.98] disabled:opacity-60"
             >
               <DownloadIcon className="h-6 w-6 text-ink/60" />
               {refreshing ? "Refreshing…" : "Refresh menu"}

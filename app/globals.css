@@ -9,24 +9,55 @@ body {
 }
 
 body {
-  @apply bg-cream text-ink;
+  @apply text-ink;
+  /* Soft, hand-finished warm gradient rather than a flat fill. */
+  background-color: #faf6ef;
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, #fffcf7 0%, rgba(255, 252, 247, 0) 55%),
+    radial-gradient(90% 60% at 100% 0%, rgba(194, 160, 76, 0.07) 0%, rgba(194, 160, 76, 0) 60%),
+    radial-gradient(90% 70% at 0% 100%, rgba(199, 93, 68, 0.06) 0%, rgba(199, 93, 68, 0) 55%);
+  background-attachment: fixed;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  font-feature-settings: "ss01", "cv01";
 }
 
-/* Big pulse to draw the eye to the main play button. */
-@keyframes soft-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(232, 101, 74, 0.45);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 0 0 22px rgba(232, 101, 74, 0);
-  }
+/* Premium card surface: subtle warm tint + layered depth. */
+.surface {
+  background-color: theme("colors.ivory");
+  box-shadow: theme("boxShadow.card");
 }
 
-.animate-soft-pulse {
-  animation: soft-pulse 2.4s ease-in-out infinite;
+/* Main play button: breathing core wrapped in an expanding halo. */
+.play-halo {
+  animation: halo 2.6s ease-out infinite;
+}
+
+/* Stagger helper for entrance animations. */
+.stagger > * {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger > *:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.28s;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 0.36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

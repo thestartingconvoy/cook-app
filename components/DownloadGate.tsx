@@ -36,21 +36,25 @@ export default function DownloadGate({
         onClick={onBack}
         disabled={status === "working"}
         aria-label="Back to menus"
-        className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink shadow-sm ring-1 ring-black/5 active:scale-95 disabled:opacity-50"
+        className="surface absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-full text-ink active:scale-95 disabled:opacity-50"
       >
         <ArrowLeftIcon className="h-6 w-6" />
       </button>
 
-      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-leaf/15 text-leaf">
-        <CheckIcon className="h-12 w-12" />
+      <div className="animate-scale-in flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-leaf/20 to-leaf/5 text-leaf shadow-soft ring-1 ring-inset ring-leaf/15">
+        <CheckIcon className="h-14 w-14" />
       </div>
-      <div className="mt-6 text-3xl font-semibold">{menu.name}</div>
-      <div className="mt-1 text-ink/50">{menu.days.length} days</div>
+      <div className="mt-8 font-display text-4xl font-medium tracking-tightest text-ink">
+        {menu.name}
+      </div>
+      <div className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-gold">
+        {menu.days.length} days
+      </div>
 
       {status === "done" ? (
         <button
           onClick={onDone}
-          className="mt-12 flex items-center gap-3 rounded-full bg-leaf px-10 py-5 text-2xl font-semibold text-white shadow-lg active:scale-95"
+          className="mt-14 flex items-center gap-3 rounded-full bg-gradient-to-br from-leaf to-[#587857] px-12 py-5 font-display text-2xl font-medium text-white shadow-float active:scale-95"
         >
           <CheckIcon className="h-7 w-7" />
           Start
@@ -59,7 +63,7 @@ export default function DownloadGate({
         <button
           onClick={handleDownload}
           disabled={status === "working"}
-          className="mt-12 flex items-center gap-3 rounded-full bg-accent px-10 py-5 text-2xl font-semibold text-white shadow-lg active:scale-95 disabled:opacity-60"
+          className="mt-14 flex items-center gap-3 rounded-full bg-gradient-to-br from-accent to-accentDark px-12 py-5 font-display text-2xl font-medium text-white shadow-float active:scale-95 disabled:opacity-60"
         >
           <DownloadIcon className="h-7 w-7" />
           {status === "working" ? "Saving…" : "Save offline"}

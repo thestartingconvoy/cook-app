@@ -48,19 +48,21 @@ export default function InstallPrompt() {
   if (!visible || !installEvent) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-sm rounded-2xl bg-white p-4 text-left shadow-xl ring-1 ring-black/10">
-      <div className="text-base font-semibold text-ink">Install this app</div>
+    <div className="surface animate-fade-up fixed inset-x-4 bottom-4 z-50 mx-auto max-w-sm rounded-3xl p-5 text-left">
+      <div className="font-display text-lg font-medium tracking-tightest text-ink">
+        Install this app
+      </div>
       <div className="mt-1 text-sm text-ink/60">Open it faster from your phone.</div>
-      <div className="mt-3 flex justify-end gap-2">
+      <div className="mt-4 flex justify-end gap-2">
         <button
           onClick={() => setVisible(false)}
-          className="rounded-full px-4 py-2 text-sm font-medium text-ink/60 active:scale-95"
+          className="rounded-full px-5 py-2.5 text-sm font-medium text-ink/60 active:scale-95"
         >
           Skip
         </button>
         <button
           onClick={handleInstall}
-          className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white active:scale-95"
+          className="rounded-full bg-gradient-to-br from-accent to-accentDark px-5 py-2.5 text-sm font-semibold text-white shadow-soft active:scale-95"
         >
           Install
         </button>
