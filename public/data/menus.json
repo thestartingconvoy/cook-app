@@ -1,0 +1,77 @@
+[
+  {
+    "id": "north-indian-veg",
+    "name": "North Indian Veg",
+    "cover": null,
+    "days": [
+      {
+        "day": 1,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Poha", "image": null },
+          { "name": "Dal Chawal", "image": null },
+          { "name": "Roti Aloo Gobi", "image": null }
+        ]
+      },
+      {
+        "day": 2,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Upma", "image": null },
+          { "name": "Rajma Chawal", "image": null },
+          { "name": "Roti Bhindi", "image": null }
+        ]
+      },
+      {
+        "day": 3,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Paratha", "image": null },
+          { "name": "Kadhi Chawal", "image": null },
+          { "name": "Roti Paneer", "image": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-indian",
+    "name": "South Indian",
+    "cover": null,
+    "days": [
+      {
+        "day": 1,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Idli Sambar", "image": null },
+          { "name": "Curd Rice", "image": null },
+          { "name": "Dosa", "image": null }
+        ]
+      },
+      {
+        "day": 2,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Pongal", "image": null },
+          { "name": "Lemon Rice", "image": null },
+          { "name": "Uttapam", "image": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "light-meals",
+    "name": "Light Meals",
+    "cover": null,
+    "days": [
+      {
+        "day": 1,
+        "voiceNote": null,
+        "meals": [
+          { "name": "Fruit Bowl", "image": null },
+          { "name": "Khichdi", "image": null },
+          { "name": "Vegetable Soup", "image": null }
+        ]
+      }
+    ]
+  }
+]
