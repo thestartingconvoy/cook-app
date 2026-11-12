@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Menu } from "@/lib/types";
 import { RefreshIcon } from "./icons";
+import AppInstallButton from "./AppInstallButton";
 
 /**
  * First-run screen (admin sets this up for the cook): a grid of menus to
@@ -30,7 +31,7 @@ export default function MenuPicker({
   }
 
   return (
-    <div className="min-h-dvh px-6 py-12">
+    <div className="min-h-dvh px-6 pb-28 pt-12">
       <div className="mx-auto mb-6 flex max-w-md items-center justify-end">
         {onRefresh && (
           <button
@@ -39,7 +40,7 @@ export default function MenuPicker({
             aria-label="Refresh menus"
             className="surface flex h-11 w-11 items-center justify-center rounded-full text-ink/60 active:scale-95 disabled:opacity-60"
           >
-            <RefreshIcon className={`h-5 w-5 ${refreshing ? "animate-spin" : ""}`} />
+            <RefreshIcon className={refreshing ? "h-5 w-5 animate-spin" : "h-5 w-5"} />
           </button>
         )}
       </div>
@@ -69,6 +70,7 @@ export default function MenuPicker({
           </button>
         ))}
       </div>
+      <AppInstallButton />
     </div>
   );
 }
