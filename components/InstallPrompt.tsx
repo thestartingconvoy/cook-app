@@ -15,7 +15,8 @@ function isAndroidBrowser(): boolean {
 }
 
 export default function InstallPrompt() {
-  const [installEvent, setInstallEvent] = useState<BeforeInstallPromptEvent | null>(null);
+  const [installEvent, setInstallEvent] =
+    useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,11 @@ export default function InstallPrompt() {
     }
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    return () => window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    return () =>
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
   }, []);
 
   useEffect(() => {
@@ -43,6 +48,7 @@ export default function InstallPrompt() {
     await installEvent.prompt();
     await installEvent.userChoice.catch(() => null);
     setInstallEvent(null);
+    window.dispatchEvent(new Event("cook-install-consumed"));
   }
 
   if (!visible || !installEvent) return null;
